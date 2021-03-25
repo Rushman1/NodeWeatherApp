@@ -1,0 +1,176 @@
+body {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #333;
+    font-family: 'ABeeZee', 'Open Sans', sans-serif;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    color: #888;
+    border-top: 1px solid #eee;
+    margin-top: 16px;
+    padding: 16px 0px;
+}
+
+header {
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+nav a {
+    color: #888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+nav div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.portrait {
+    width: 250px;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.form-holder ,.form-control {
+    width: 100%;
+}
+
+.form-control {
+    margin-top: 5px;
+}
+
+.form-input {
+    width: 75%;
+}
+
+:root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 4;
+    --input-focus-s: 100%;
+    --input-focus-l: 41%;
+  }
+  
+  .input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    transition: 180ms box-shadow ease-in-out;
+    width: 100%;
+  }
+  
+  .input:focus {
+    border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
+    box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) + 40%), 0.8);
+    outline: 3px solid transparent;
+  }
+  
+  .input:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+  }
+  
+  input[type=file] {
+    font-size: 0.9em;
+    padding-top: 0.35rem;
+  }
+  
+  textarea.input {
+    resize: vertical;
+  }
+  
+  .input[readonly] {
+    border-style: dotted;
+    cursor: not-allowed;
+    color: #777;
+  }
+  
+  .input[disabled] {
+    --input-border: #ccc;
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+  
+  label {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  
+  .input + label {
+    margin-top: 2rem;
+  }
+  
+  button {
+    display: inline-block;
+    background-color: #680700;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 5px 5px 0px;
+  }
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  button:hover {
+    background-color: rgba(104,7,0,0.70);
+  }
+  button:hover span {
+    padding-right: 25px;
+  }
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  tr {
+    height: 30px;
+  }
+
+  th, td {
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  .table-icon {
+    width: 64px;
+  }
