@@ -3,6 +3,7 @@ const express = require('express'); // Exposes a single function
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const weather = require('./utils/weather-forecast');
+const { execPath } = require('process');
 
 const app = express();
 
@@ -11,6 +12,7 @@ const app = express();
 const publicDirectoryPath = path.join(__dirname,'..', 'public');
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
+const scriptsPath = path.join(__dirname, '../node_modules');
 
 // Setup handlebars engine and views location
 app.set('view engine','hbs');
@@ -20,10 +22,12 @@ hbs.registerPartials(partialsPath);
 // Used to customize Express
 // Set up static directory to serve
 app.use(express.static(publicDirectoryPath));
+app.use('/scripts', express.static(scriptsPath));
 
 // Routes
 app.get('',(req, res)=>{
     res.render('index',{
+        layout: '../layouts/layout',
         title: 'Here is my title',
         name: 'Tim Savage'
     });
@@ -31,6 +35,7 @@ app.get('',(req, res)=>{
 
 app.get('/about',(req, res)=>{
     res.render('about',{
+        layout: '../layouts/layout',
         title: 'About',
         name: 'Tim Savage'
     });
@@ -38,10 +43,15 @@ app.get('/about',(req, res)=>{
 
 app.get('/help',(req, res)=>{
     res.render('help',{
+        layout: '../layouts/layout',
         title: 'Help!',
         name: 'Tim Savage',
         message: 'Here is a help message. Please contact me!'
     });
+});
+
+app.get('/test',(req,res)=>{
+    res.render('test-index', {layout: '../layouts/layout'});
 });
 
 
@@ -104,6 +114,7 @@ app.get('/products',(req, res)=>{
 
 app.get('/help/*',(req,res)=>{
     res.render('404',{
+        layout: '../layouts/layout',
         title: 'Help!',
         name: 'Tim Savage',
         message: 'Help Article not found'
@@ -112,6 +123,7 @@ app.get('/help/*',(req,res)=>{
 
 app.get('*',(req, res)=>{
     res.render('404',{
+        layout: '../layouts/layout',
         title: '404!',
         name: 'Tim Savage',
         message: 'Page not found'

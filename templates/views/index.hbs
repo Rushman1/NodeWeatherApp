@@ -1,44 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Weather Forecaster</title>
-        <link rel="icon" href="/images/weather.png">
-        <link rel="stylesheet" href="/css/styles.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Open+Sans&display=swap" rel="stylesheet">  
-    </head>
-    <body>
-        <div class="main-content">
-            {{>nav}}
-            {{>header}}
-            <main>
-                <div class="form-holder">
-                    <form>
-                        <div class="form-control">
-                            <label for="address-input">Location / Address</label>
-                            <input type="text" placeholder="Please type in a location/address" class="input" id="address-input"/>
-                        </div>
-                        <div class="form-control">
-                            <button class="form-button"><span>Search</span></button>
-                        </div>
-                    </form>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td class="table-icon">
-                                <img id="weather-icon"/>
-                            </td>
-                            <td>
-                                <p id="location"></p>
-                                <p id="description"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </main>
+<div class="form-holder">
+    <form>
+        <div class="mb-3">
+            <label for="address-input">Location / Address</label>
+            <input type="text" placeholder="Please type in a location/address" class="input form-control" id="address-input"/>
         </div>
-        {{>footer}}
-        <script src="./js/app.js" type="text/javascript"></script>
-    </body>
-</html>
+        <div class="mb-3">
+            <button class="btn btn-primary"><span>Search</span></button>
+        </div>
+    </form>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <td class="table-icon">
+                <img id="weather-icon"/>
+            </td>
+            <td>
+                <p id="location"></p>
+                <p id="description"></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
